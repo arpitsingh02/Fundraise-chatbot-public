@@ -1,0 +1,35 @@
+# IDE / Python
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local models
+models/
+
+# Secrets — never commit tokens
+.env
+*.env
+token_huggingface.py
+*token*.py
+
+# Proprietary / company data — never commit
+data/*
+!data/README.md
+raw data/
+raw_data/
+vector_stores/
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+*.docx
+*.doc
+*.pdf
+*.sqlite
+*.sqlite3
+*.db
+*_schema.yaml
+~$*

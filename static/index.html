@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fundraise Copilot (Local)</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">FC</div>
+        <div>
+          <div class="brand-title">Fundraise Copilot</div>
+          <div class="brand-sub">Local RAG • SQL + FAQ</div>
+        </div>
+      </div>
+
+      <div class="sidebar-actions">
+        <button id="newChatBtn" class="btn btn-secondary">New chat</button>
+        <button id="toggleDetailsBtn" class="btn btn-ghost">Toggle details</button>
+      </div>
+
+      <div class="hint-card">
+        <div class="hint-title">Try asking</div>
+        <div class="hint">• What is the EBITDA in FY27?</div>
+        <div class="hint">• What is the go-to-market strategy?</div>
+        <div class="hint">• How will the new funds be used?</div>
+      </div>
+
+      <div class="footer">
+        <div class="pill">v0.1</div>
+        <div class="footnote">Runs entirely on localhost</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <div class="dot online"></div>
+          <div class="topbar-title">Chat</div>
+        </div>
+        <div class="topbar-right">
+          <div class="chip" id="sessionChip">session: —</div>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="chat" id="chat"></div>
+
+        <div class="details" id="details">
+          <div class="details-header">Details</div>
+          <div class="details-body">
+            <div class="details-block">
+              <div class="details-label">Executed SQL</div>
+              <pre id="sqlBox" class="codebox"></pre>
+            </div>
+            <div class="details-block">
+              <div class="details-label">Facts</div>
+              <pre id="factsBox" class="codebox"></pre>
+            </div>
+            <div class="details-block">
+              <div class="details-label">FAQ Excerpts</div>
+              <pre id="faqBox" class="codebox"></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="composer">
+        <div class="composer-inner">
+          <textarea id="input" rows="1" placeholder="Ask a question… (Shift+Enter for new line)"></textarea>
+          <button id="sendBtn" class="btn btn-primary">Send</button>
+        </div>
+        <div class="composer-hint">Tip: Ask multi-part questions; it will pull from SQL + FAQ. | The output here is AI generated and can be inaccurate. Please exhibit caution.</div>
+
+      </footer>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
